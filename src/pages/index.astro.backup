@@ -1,0 +1,1701 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const siteTitle = "비바수뷰티 - 영통/망포 속눈썹 전문점 | LED펌포인트연장";
+const siteDescription = "영통역 속눈썹 연장·펌 전문! 260개 리뷰 평균 4.9점. LED펌포인트연장 70,000원 이벤트. 네이버 예약 가능.";
+---
+
+<Layout title={siteTitle} description={siteDescription}>
+  <!-- Hero Section with Video Background -->
+  <section class="hero-video-section" itemscope itemtype="https://schema.org/LocalBusiness">
+    <!-- 데스크톱: 블러 배경 동영상 (전체 화면) -->
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="/videos/poster.jpg"
+      class="hero-video-blur"
+      aria-hidden="true"
+    >
+      <source src="/videos/vivasu-hero-optimized.webm" type="video/webm">
+      <source src="/videos/vivasu-hero-optimized.mp4" type="video/mp4">
+    </video>
+
+    <!-- 메인 동영상 (중앙) -->
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="/videos/poster.jpg"
+      class="hero-video-main"
+      id="hero-video"
+    >
+      <source src="/videos/vivasu-hero-optimized.webm" type="video/webm">
+      <source src="/videos/vivasu-hero-optimized.mp4" type="video/mp4">
+    </video>
+
+    <!-- 오버레이 (반투명) -->
+    <div class="hero-overlay"></div>
+
+    <!-- 컨텐츠 -->
+    <div class="hero-content">
+      <div class="container mx-auto px-4">
+        <div class="hero-text-container">
+          <!-- 메인 헤드라인 (SEO 최적화) -->
+          <h1 class="hero-headline" itemprop="name">
+            속눈썹펌 하고 싶은데,<br />
+            <span class="hero-headline-emphasis">손상이 두려우신가요?</span>
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- Schema.org LocalBusiness 메타데이터 (검색엔진용) -->
+    <meta itemprop="address" content="경기도 수원시 영통구 영통로501번길 48-14 3층">
+    <meta itemprop="telephone" content="0507-1413-5222">
+    <meta itemprop="priceRange" content="₩₩">
+  </section>
+
+  <!-- 신뢰 요소 띠 (카운트업 애니메이션) -->
+  <section class="py-6" style="background: var(--beige-200); border-top: 1px solid var(--beige-300); border-bottom: 1px solid var(--beige-300);"
+           itemscope itemtype="https://schema.org/LocalBusiness">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto">
+
+        <!-- 네이버 리뷰 -->
+        <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+          <meta itemprop="reviewCount" content="260">
+          <div class="text-3xl font-bold mb-2 countup"
+               style="color: var(--bronze);"
+               data-count="260"
+               data-suffix="+"
+               aria-label="네이버 리뷰 260개 이상">260+</div>
+          <p class="text-sm" style="color: var(--text-subtle);">네이버 리뷰</p>
+        </div>
+
+        <!-- 고객 만족도 -->
+        <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+          <meta itemprop="ratingValue" content="4.9">
+          <meta itemprop="bestRating" content="5">
+          <div class="text-3xl font-bold mb-2 countup"
+               style="color: var(--bronze);"
+               data-count="4.9"
+               data-decimal="1"
+               data-prefix="평균 "
+               data-suffix="점"
+               aria-label="고객 만족도 평균 4.9점">평균 4.9점</div>
+          <p class="text-sm" style="color: var(--text-subtle);">고객 만족도</p>
+        </div>
+
+        <!-- 누적 고객 -->
+        <div>
+          <div class="text-3xl font-bold mb-2 countup"
+               style="color: var(--bronze);"
+               data-count="1200"
+               data-separator=","
+               data-suffix="+"
+               aria-label="누적 고객 1200명 이상">1,200+</div>
+          <p class="text-sm" style="color: var(--text-subtle);">누적 고객</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 고객 리뷰 캐러셀 -->
+  <section class="py-20 overflow-hidden" style="background: white;">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-4">고객님들의 생생한 후기</h2>
+      <p class="text-center mb-12" style="color: var(--text-secondary);">
+        네이버 플레이스 평점 4.9점, 260개 이상의 리얼 리뷰
+      </p>
+
+      <div class="review-carousel-wrapper">
+        <div class="review-carousel">
+          <!-- 리뷰 카드 1 -->
+          <article class="review-card" itemscope itemtype="https://schema.org/Review">
+            <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+              <meta itemprop="ratingValue" content="5">
+              <meta itemprop="bestRating" content="5">
+              <span class="stars">★★★★★</span>
+            </div>
+            <p class="review-text" itemprop="reviewBody">
+              LED펌포인트연장 받았는데 진짜 자연스럽고 너무 예뻐요! 관리도 편하고 한 달 넘게 유지되네요.
+            </p>
+            <div class="review-meta">
+              <span class="reviewer-name" itemprop="author">김**</span>
+              <span class="review-service">LED펌포인트연장</span>
+            </div>
+            <meta itemprop="itemReviewed" content="비바수뷰티">
+          </article>
+
+          <!-- 리뷰 카드 2 -->
+          <article class="review-card" itemscope itemtype="https://schema.org/Review">
+            <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+              <meta itemprop="ratingValue" content="5">
+              <meta itemprop="bestRating" content="5">
+              <span class="stars">★★★★★</span>
+            </div>
+            <p class="review-text" itemprop="reviewBody">
+              블랙펌 하고 매일 아침이 편해졌어요. 꺾임 없이 자연스럽게 올라가서 마스카라만 살짝!
+            </p>
+            <div class="review-meta">
+              <span class="reviewer-name" itemprop="author">이**</span>
+              <span class="review-service">블랙펌</span>
+            </div>
+            <meta itemprop="itemReviewed" content="비바수뷰티">
+          </article>
+
+          <!-- 리뷰 카드 3 -->
+          <article class="review-card" itemscope itemtype="https://schema.org/Review">
+            <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+              <meta itemprop="ratingValue" content="5">
+              <meta itemprop="bestRating" content="5">
+              <span class="stars">★★★★★</span>
+            </div>
+            <p class="review-text" itemprop="reviewBody">
+              원장님이 정말 꼼꼼하게 해주세요. 속눈썹 짧은데도 2D연장하니까 눈이 커 보여요!
+            </p>
+            <div class="review-meta">
+              <span class="reviewer-name" itemprop="author">박**</span>
+              <span class="review-service">2D연장</span>
+            </div>
+            <meta itemprop="itemReviewed" content="비바수뷰티">
+          </article>
+
+          <!-- 리뷰 카드 4 -->
+          <article class="review-card" itemscope itemtype="https://schema.org/Review">
+            <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+              <meta itemprop="ratingValue" content="5">
+              <meta itemprop="bestRating" content="5">
+              <span class="stars">★★★★★</span>
+            </div>
+            <p class="review-text" itemprop="reviewBody">
+              영통에서 속눈썹 맛집이에요. 시술 시간도 빠르고 결과물도 만족스러워서 계속 다니고 있어요.
+            </p>
+            <div class="review-meta">
+              <span class="reviewer-name" itemprop="author">최**</span>
+              <span class="review-service">프리미엄 영양펌</span>
+            </div>
+            <meta itemprop="itemReviewed" content="비바수뷰티">
+          </article>
+
+          <!-- 리뷰 카드 5 -->
+          <article class="review-card" itemscope itemtype="https://schema.org/Review">
+            <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+              <meta itemprop="ratingValue" content="5">
+              <meta itemprop="bestRating" content="5">
+              <span class="stars">★★★★★</span>
+            </div>
+            <p class="review-text" itemprop="reviewBody">
+              LED 추가하니까 속눈썹이 더 건강해진 느낌! 지글거림 전혀 없고 윤기가 생겼어요.
+            </p>
+            <div class="review-meta">
+              <span class="reviewer-name" itemprop="author">정**</span>
+              <span class="review-service">LED연장 추가</span>
+            </div>
+            <meta itemprop="itemReviewed" content="비바수뷰티">
+          </article>
+
+          <!-- 리뷰 카드 6 -->
+          <article class="review-card" itemscope itemtype="https://schema.org/Review">
+            <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+              <meta itemprop="ratingValue" content="5">
+              <meta itemprop="bestRating" content="5">
+              <span class="stars">★★★★★</span>
+            </div>
+            <p class="review-text" itemprop="reviewBody">
+              속눈썹 펌 받고 고데기 버렸어요. 세수해도 그대로고 아침에 시간이 정말 많이 절약돼요!
+            </p>
+            <div class="review-meta">
+              <span class="reviewer-name" itemprop="author">강**</span>
+              <span class="review-service">클리닉펌</span>
+            </div>
+            <meta itemprop="itemReviewed" content="비바수뷰티">
+          </article>
+
+          <!-- 리뷰 카드 7 -->
+          <article class="review-card" itemscope itemtype="https://schema.org/Review">
+            <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+              <meta itemprop="ratingValue" content="5">
+              <meta itemprop="bestRating" content="5">
+              <span class="stars">★★★★★</span>
+            </div>
+            <p class="review-text" itemprop="reviewBody">
+              특수컬로 했더니 진짜 인형같아요. 주변에서 어디서 했냐고 계속 물어봐요!
+            </p>
+            <div class="review-meta">
+              <span class="reviewer-name" itemprop="author">윤**</span>
+              <span class="review-service">특수컬</span>
+            </div>
+            <meta itemprop="itemReviewed" content="비바수뷰티">
+          </article>
+
+          <!-- 리뷰 카드 8 -->
+          <article class="review-card" itemscope itemtype="https://schema.org/Review">
+            <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+              <meta itemprop="ratingValue" content="5">
+              <meta itemprop="bestRating" content="5">
+              <span class="stars">★★★★★</span>
+            </div>
+            <p class="review-text" itemprop="reviewBody">
+              망포에서 찾다가 여기 발견했는데 대박이에요. 가격도 합리적이고 실력도 최고!
+            </p>
+            <div class="review-meta">
+              <span class="reviewer-name" itemprop="author">조**</span>
+              <span class="review-service">기본 연장</span>
+            </div>
+            <meta itemprop="itemReviewed" content="비바수뷰티">
+          </article>
+
+          <!-- 리뷰 카드 9 -->
+          <article class="review-card" itemscope itemtype="https://schema.org/Review">
+            <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+              <meta itemprop="ratingValue" content="5">
+              <meta itemprop="bestRating" content="5">
+              <span class="stars">★★★★★</span>
+            </div>
+            <p class="review-text" itemprop="reviewBody">
+              리터치 없이 한 달 이상 가서 가성비 최고예요. 4단계 클리닉 케어가 확실히 다르네요!
+            </p>
+            <div class="review-meta">
+              <span class="reviewer-name" itemprop="author">한**</span>
+              <span class="review-service">LED펌포인트연장</span>
+            </div>
+            <meta itemprop="itemReviewed" content="비바수뷰티">
+          </article>
+
+          <!-- 리뷰 카드 10 -->
+          <article class="review-card" itemscope itemtype="https://schema.org/Review">
+            <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+              <meta itemprop="ratingValue" content="5">
+              <meta itemprop="bestRating" content="5">
+              <span class="stars">★★★★★</span>
+            </div>
+            <p class="review-text" itemprop="reviewBody">
+              마스카라연장 처음 해봤는데 진짜 속눈썹 풍성해 보여요. 화장 안 해도 될 것 같아요!
+            </p>
+            <div class="review-meta">
+              <span class="reviewer-name" itemprop="author">신**</span>
+              <span class="review-service">마스카라연장</span>
+            </div>
+            <meta itemprop="itemReviewed" content="비바수뷰티">
+          </article>
+
+          <!-- 무한 루프를 위한 복제본 -->
+          <article class="review-card" itemscope itemtype="https://schema.org/Review" aria-hidden="true">
+            <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+              <meta itemprop="ratingValue" content="5">
+              <meta itemprop="bestRating" content="5">
+              <span class="stars">★★★★★</span>
+            </div>
+            <p class="review-text" itemprop="reviewBody">
+              LED펌포인트연장 받았는데 진짜 자연스럽고 너무 예뻐요! 관리도 편하고 한 달 넘게 유지되네요.
+            </p>
+            <div class="review-meta">
+              <span class="reviewer-name" itemprop="author">김**</span>
+              <span class="review-service">LED펌포인트연장</span>
+            </div>
+            <meta itemprop="itemReviewed" content="비바수뷰티">
+          </article>
+
+          <article class="review-card" itemscope itemtype="https://schema.org/Review" aria-hidden="true">
+            <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+              <meta itemprop="ratingValue" content="5">
+              <meta itemprop="bestRating" content="5">
+              <span class="stars">★★★★★</span>
+            </div>
+            <p class="review-text" itemprop="reviewBody">
+              블랙펌 하고 매일 아침이 편해졌어요. 꺾임 없이 자연스럽게 올라가서 마스카라만 살짝!
+            </p>
+            <div class="review-meta">
+              <span class="reviewer-name" itemprop="author">이**</span>
+              <span class="review-service">블랙펌</span>
+            </div>
+            <meta itemprop="itemReviewed" content="비바수뷰티">
+          </article>
+
+          <article class="review-card" itemscope itemtype="https://schema.org/Review" aria-hidden="true">
+            <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+              <meta itemprop="ratingValue" content="5">
+              <meta itemprop="bestRating" content="5">
+              <span class="stars">★★★★★</span>
+            </div>
+            <p class="review-text" itemprop="reviewBody">
+              원장님이 정말 꼼꼼하게 해주세요. 속눈썹 짧은데도 2D연장하니까 눈이 커 보여요!
+            </p>
+            <div class="review-meta">
+              <span class="reviewer-name" itemprop="author">박**</span>
+              <span class="review-service">2D연장</span>
+            </div>
+            <meta itemprop="itemReviewed" content="비바수뷰티">
+          </article>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a
+          href="https://map.naver.com/p/entry/place/2013429549?placePath=/review"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary inline-block"
+          data-event="review-cta-click"
+          aria-label="네이버 플레이스에서 260개 이상의 리뷰 확인하기"
+        >
+          더 많은 리뷰 보러가기 (260개+)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 서비스 메뉴 & 가격표 -->
+  <section class="py-20" style="background: var(--beige-50);">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12">서비스 메뉴</h2>
+
+      <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+        <!-- 속눈썹 연장 -->
+        <div class="p-8 rounded-xl" style="background: white; border: 1px solid var(--beige-300);">
+          <h3 class="text-2xl font-semibold mb-6" style="color: var(--bronze);">속눈썹 연장</h3>
+          <ul class="space-y-4">
+            <li class="flex justify-between items-center pb-3" style="border-bottom: 1px solid var(--beige-200);">
+              <span>기본 연장</span>
+              <span class="font-medium">55,000원</span>
+            </li>
+            <li class="flex justify-between items-center pb-3" style="border-bottom: 1px solid var(--beige-200);">
+              <span>2D연장</span>
+              <span class="font-medium">70,000원</span>
+            </li>
+            <li class="flex justify-between items-center pb-3" style="border-bottom: 1px solid var(--beige-200);">
+              <span>특수컬</span>
+              <span class="font-medium">65,000원</span>
+            </li>
+            <li class="flex justify-between items-center pb-3" style="border-bottom: 1px solid var(--beige-200);">
+              <span>마스카라연장 (픽서 필수)</span>
+              <span class="font-medium">75,000원</span>
+            </li>
+            <li class="flex justify-between items-center pb-3" style="border-bottom: 1px solid var(--beige-200);">
+              <span>LED 연장 추가</span>
+              <span class="font-medium">+20,000원</span>
+            </li>
+            <li class="flex justify-between items-center pb-3" style="border-bottom: 1px solid var(--beige-200);">
+              <span>언더래쉬</span>
+              <span class="font-medium">+20,000원</span>
+            </li>
+            <li class="flex justify-between items-center">
+              <span>리터치</span>
+              <span class="font-medium">본 시술의 50%</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 속눈썹 펌 -->
+        <div class="p-8 rounded-xl" style="background: white; border: 1px solid var(--beige-300);">
+          <h3 class="text-2xl font-semibold mb-6" style="color: var(--bronze);">속눈썹 펌</h3>
+          <ul class="space-y-4">
+            <li class="flex justify-between items-center pb-3" style="border-bottom: 1px solid var(--beige-200);">
+              <span>클리닉펌</span>
+              <span class="font-medium">40,000원</span>
+            </li>
+            <li class="flex justify-between items-center pb-3" style="border-bottom: 1px solid var(--beige-200);">
+              <div class="flex items-center gap-2">
+                <span>블랙펌</span>
+                <span class="text-xs px-2 py-1 rounded" style="background: var(--rose-gold); color: var(--text-primary);">BEST</span>
+              </div>
+              <span class="font-medium">45,000원</span>
+            </li>
+            <li class="flex justify-between items-center pb-3" style="border-bottom: 1px solid var(--beige-200);">
+              <span>프리미엄 영양펌</span>
+              <span class="font-medium">50,000원</span>
+            </li>
+            <li class="flex justify-between items-center pb-3" style="border-bottom: 1px solid var(--beige-200);">
+              <div class="flex items-center gap-2">
+                <span>LED펌포인트연장</span>
+                <span class="text-xs px-2 py-1 rounded" style="background: linear-gradient(135deg, var(--rose-gold), var(--gold)); color: var(--text-primary);">인기</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="line-through text-sm" style="color: var(--text-subtle);">90,000원</span>
+                <span class="font-bold text-xl" style="color: var(--bronze);">70,000원</span>
+              </div>
+            </li>
+            <li class="flex justify-between items-center pb-3" style="border-bottom: 1px solid var(--beige-200);">
+              <span>언더펌</span>
+              <span class="font-medium">+30,000원</span>
+            </li>
+            <li class="flex justify-between items-center">
+              <span>동시펌 (2인)</span>
+              <span class="font-medium">80,000원</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a
+          href="https://map.naver.com/p/entry/place/2013429549"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary inline-block"
+        >
+          네이버 예약하기
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="py-20" style="background: white;">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12">이런 고민 있으신가요?</h2>
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="p-8 rounded-xl" style="background: var(--beige-50); border: 1px solid var(--beige-200);">
+          <div class="text-4xl mb-4">😥</div>
+          <h3 class="text-xl font-semibold mb-3">매일 속눈썹 고데기</h3>
+          <p style="color: var(--text-secondary);">
+            매일 아침 30분씩 속눈썹 고데기로 올리고, 마스카라 바르느라 시간이 아깝지 않으세요?
+          </p>
+        </div>
+        <div class="p-8 rounded-xl" style="background: var(--beige-50); border: 1px solid var(--beige-200);">
+          <div class="text-4xl mb-4">😢</div>
+          <h3 class="text-xl font-semibold mb-3">속눈썹이 너무 짧아요</h3>
+          <p style="color: var(--text-secondary);">
+            속눈썹이 짧고 적어서 연장도 망설여지고, 펌도 효과가 있을지 걱정되시나요?
+          </p>
+        </div>
+        <div class="p-8 rounded-xl" style="background: var(--beige-50); border: 1px solid var(--beige-200);">
+          <div class="text-4xl mb-4">💸</div>
+          <h3 class="text-xl font-semibold mb-3">관리가 너무 번거로워요</h3>
+          <p style="color: var(--text-secondary);">
+            속눈썹 연장은 유지가 힘들고, 펌은 효과가 금방 떨어져서 고민이신가요?
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section class="py-20" style="background: linear-gradient(135deg, var(--beige-100) 0%, var(--rose-gold) 100%);">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12">비바수뷰티가 해결해드립니다</h2>
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="text-4xl mb-4">✨</div>
+          <h3 class="text-2xl font-semibold mb-3" style="color: var(--bronze);">LED펌포인트연장</h3>
+          <p class="mb-4" style="color: var(--text-secondary);">
+            펌과 연장의 장점만 모았습니다. 내 속눈썹은 펌으로 올려주고, 짧은 부분만 연장으로 보완해서
+            <strong>가장 자연스럽고 관리가 편한</strong> 시술입니다.
+          </p>
+          <ul class="space-y-2" style="color: var(--text-secondary);">
+            <li>• 한 달 이상 지속 (펌+연장 효과)</li>
+            <li>• 리터치 필요 없음</li>
+            <li>• LED로 영양 공급, 손상 최소화</li>
+            <li>• <strong style="color: var(--bronze);">90,000원 → 70,000원 이벤트</strong></li>
+          </ul>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="text-4xl mb-4">🎯</div>
+          <h3 class="text-2xl font-semibold mb-3" style="color: var(--bronze);">4단계 클리닉 시술</h3>
+          <p class="mb-4" style="color: var(--text-secondary);">
+            비바수뷰티는 일반 속눈썹 펌과 다릅니다. 꺾임, 지글거림, 탈락을 최소화하는
+            <strong>4단계 클리닉 케어</strong>를 진행합니다.
+          </p>
+          <ul class="space-y-2" style="color: var(--text-secondary);">
+            <li>• 1단계: 단백질 영양 공급</li>
+            <li>• 2단계: 펌 시술</li>
+            <li>• 3단계: LED 광케어 (손상 회복)</li>
+            <li>• 4단계: 에센스 코팅 (지속력 강화)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 시술 과정 -->
+  <section class="py-20" style="background: white;">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12">시술 과정</h2>
+      <div class="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center text-2xl font-bold" style="background: linear-gradient(135deg, var(--rose-gold), var(--gold)); color: var(--text-primary);">1</div>
+          <h3 class="font-semibold mb-2">상담</h3>
+          <p class="text-sm" style="color: var(--text-secondary);">속눈썹 상태 체크<br />원하는 스타일 상담</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center text-2xl font-bold" style="background: linear-gradient(135deg, var(--rose-gold), var(--gold)); color: var(--text-primary);">2</div>
+          <h3 class="font-semibold mb-2">디자인</h3>
+          <p class="text-sm" style="color: var(--text-secondary);">눈 모양에 맞는<br />맞춤형 디자인</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center text-2xl font-bold" style="background: linear-gradient(135deg, var(--rose-gold), var(--gold)); color: var(--text-primary);">3</div>
+          <h3 class="font-semibold mb-2">시술</h3>
+          <p class="text-sm" style="color: var(--text-secondary);">4단계 클리닉<br />꼼꼼하게 진행</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center text-2xl font-bold" style="background: linear-gradient(135deg, var(--rose-gold), var(--gold)); color: var(--text-primary);">4</div>
+          <h3 class="font-semibold mb-2">완성</h3>
+          <p class="text-sm" style="color: var(--text-secondary);">관리 방법 안내<br />애프터케어</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20" style="background: var(--beige-50);">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12">자주 묻는 질문</h2>
+      <div class="max-w-3xl mx-auto space-y-6">
+        <details class="p-6 rounded-xl" style="background: white; border: 1px solid var(--beige-300);">
+          <summary class="font-semibold cursor-pointer" style="color: var(--text-primary);">얼마나 지속되나요?</summary>
+          <p class="mt-4" style="color: var(--text-secondary);">
+            <strong>속눈썹 펜:</strong> 4-6주<br />
+            <strong>속눈썹 연장:</strong> 3-4주 (리터치 권장)<br />
+            <strong>LED펌포인트연장:</strong> 4-5주 (리터치 불필요)
+          </p>
+        </details>
+        <details class="p-6 rounded-xl" style="background: white; border: 1px solid var(--beige-300);">
+          <summary class="font-semibold cursor-pointer" style="color: var(--text-primary);">속눈썹이 손상되지 않나요?</summary>
+          <p class="mt-4" style="color: var(--text-secondary);">
+            비바수뷰티는 LED 광케어와 단백질 영양 공급으로 손상을 최소화합니다. 시술 후 오히려
+            속눈썹이 건강해졌다는 후기가 많습니다. (260개 네이버 리뷰 참조)
+          </p>
+        </details>
+        <details class="p-6 rounded-xl" style="background: white; border: 1px solid var(--beige-300);">
+          <summary class="font-semibold cursor-pointer" style="color: var(--text-primary);">예약금이 있나요?</summary>
+          <p class="mt-4" style="color: var(--text-secondary);">
+            노쇼 방지를 위해 10,000원 예약금을 받습니다.<br />
+            <strong>환불 기준:</strong> 2일 전 100% 환불 / 1일 전·당일 환불 불가<br />
+            <strong>지각:</strong> 연장 10분, 펌 15분 이상 지각 시 자동 취소
+          </p>
+        </details>
+        <details class="p-6 rounded-xl" style="background: white; border: 1px solid var(--beige-300);">
+          <summary class="font-semibold cursor-pointer" style="color: var(--text-primary);">LED펌포인트연장이 뭔가요?</summary>
+          <p class="mt-4" style="color: var(--text-secondary);">
+            내 속눈썹은 펌으로 올려주고, 짧거나 부족한 부분만 연장으로 채워서
+            <strong>가장 자연스럽고 관리가 편한</strong> 시술입니다.
+            "한 번 받으면 끊을 수 없다"는 고객님들의 찐 후기가 증명합니다.
+          </p>
+        </details>
+        <details class="p-6 rounded-xl" style="background: white; border: 1px solid var(--beige-300);">
+          <summary class="font-semibold cursor-pointer" style="color: var(--text-primary);">주차 가능한가요?</summary>
+          <p class="mt-4" style="color: var(--text-secondary);">
+            건물 내 유료 주차 가능합니다. 영통역, 망포역에서 도보 10분 거리이며,
+            롯데쇼핑플라자 주차 후 걸어오시는 분들도 많습니다.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 시술 과정 갤러리 -->
+  <section class="py-20" style="background: var(--beige-50);">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">섬세한 손길, 완벽한 마무리</h2>
+        <p class="text-lg" style="color: var(--text-secondary);">
+          한 올 한 올 정성스럽게, 고객님의 눈매에 맞춰 디자인합니다
+        </p>
+      </div>
+
+      <div class="procedure-gallery">
+        <div class="procedure-item">
+          <div class="procedure-placeholder">
+            <span>시술 사진 1</span>
+          </div>
+        </div>
+        <div class="procedure-item">
+          <div class="procedure-placeholder">
+            <span>시술 사진 2</span>
+          </div>
+        </div>
+        <div class="procedure-item">
+          <div class="procedure-placeholder">
+            <span>시술 사진 3</span>
+          </div>
+        </div>
+        <div class="procedure-item">
+          <div class="procedure-placeholder">
+            <span>시술 사진 4</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12 px-4">
+        <p class="text-base" style="color: var(--text-secondary); line-height: 1.8; max-width: 600px; margin: 0 auto;">
+          먼저 속눈썹 상태를 꼼꼼하게 확인하고, 고객님께 어울리는 컬과 길이를 함께 정한 뒤에야 시술을 시작합니다.<br />
+          한 올을 붙이기 전, 전체 디자인을 먼저 보는 시간이 더 깁니다.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 수진원장 소개 -->
+  <section class="py-20" style="background: white;">
+    <div class="container mx-auto px-4">
+      <div class="profile-layout">
+        <div class="profile-image">
+          <div class="profile-placeholder">
+            <span>프로필 사진</span>
+          </div>
+        </div>
+        <div class="profile-text">
+          <p class="profile-name">비바수뷰티 대표 수진원장</p>
+          <p class="profile-slogan">자연스러움이 아름다움입니다</p>
+          <p class="profile-philosophy">
+            속눈썹은 단순한 미용이 아닙니다.<br />
+            매일 아침 자신감을 선물하는 일입니다.
+          </p>
+          <p class="profile-philosophy">
+            그래서 비바수뷰티는 빠른 시술보다 안전한 시술을,<br />
+            화려함보다 자연스러움을 추구합니다.
+          </p>
+          <p class="profile-philosophy">
+            4단계 클리닉 케어로 꺾임과 지글거림을 최소화하고,<br />
+            LED 광케어로 속눈썹 건강까지 지켜드립니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 위치 & 연락처 -->
+  <section class="py-20" style="background: var(--beige-50);">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12">오시는 길</h2>
+      <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-2xl font-semibold mb-4" style="color: var(--bronze);">비바수뷰티</h3>
+          <div class="space-y-3" style="color: var(--text-secondary);">
+            <p><strong>주소:</strong> 경기도 수원시 영통구 영통로501번길 48-14 3층<br />(영통동 951-4)</p>
+            <p><strong>전화:</strong> <a href="tel:0507-1413-5222" class="font-medium hover:underline" style="color: var(--bronze);">0507-1413-5222</a></p>
+            <p><strong>모바일:</strong> <a href="tel:010-7368-5222" class="font-medium hover:underline" style="color: var(--bronze);">010-7368-5222</a></p>
+            <p><strong>영업시간:</strong><br />
+              월-일: 10:00 - 21:00<br />
+              휴게시간: 18:00 - 19:00 (매일)<br />
+              정기휴무: 없음
+            </p>
+          </div>
+          <div class="mt-6 space-y-3">
+            <a href="http://pf.kakao.com/_xeexnfn" target="_blank" rel="noopener noreferrer" class="btn-primary inline-block w-full text-center">
+              카카오톡 상담하기
+            </a>
+            <a href="https://map.naver.com/p/entry/place/2013429549" target="_blank" rel="noopener noreferrer" class="btn-secondary inline-block w-full text-center">
+              네이버 지도 보기
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="rounded-xl overflow-hidden" style="border: 1px solid var(--beige-300); height: 400px;">
+            <iframe
+              src="https://map.naver.com/p/entry/place/2013429549?c=15.00,0,0,0,dh"
+              width="100%"
+              height="100%"
+              frameborder="0"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer CTA -->
+  <section class="py-20 text-center" style="background: linear-gradient(135deg, var(--rose-gold) 0%, var(--gold) 100%);">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-6">지금 바로 예약하세요</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto" style="color: var(--text-secondary);">
+        260개 리뷰 평균 4.9점의 검증된 속눈썹 전문점<br />
+        LED펌포인트연장 이벤트 70,000원 (한정 기간)
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="http://pf.kakao.com/_xeexnfn" target="_blank" rel="noopener noreferrer" class="btn-primary inline-block">
+          카카오톡 상담하기
+        </a>
+        <a href="tel:0507-1413-5222" class="btn-secondary inline-block">
+          전화 상담하기
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema.org 구조화 데이터 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "비바수뷰티",
+    "image": "https://yourdomain.com/logo.png",
+    "url": "https://yourdomain.com",
+    "telephone": "0507-1413-5222",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "영통로501번길 48-14 3층",
+      "addressLocality": "영통구",
+      "addressRegion": "수원시",
+      "addressCountry": "KR",
+      "postalCode": "16227"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 37.2653300,
+      "longitude": 127.0770750
+    },
+    "priceRange": "₩₩",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "10:00",
+        "closes": "21:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "260"
+    },
+    "sameAs": [
+      "https://www.instagram.com/vivasoo.b",
+      "https://blog.naver.com/kkiikk33",
+      "http://pf.kakao.com/_xeexnfn"
+    ]
+  }
+  </script>
+
+  <!-- Schema.org VideoObject -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "비바수뷰티 LED펌포인트연장 시술 과정",
+    "description": "영통/망포 속눈썹 전문점 비바수뷰티의 LED펌포인트연장 시술 과정. 자연스럽고 관리가 편한 프리미엄 속눈썹 시술.",
+    "thumbnailUrl": "https://yourdomain.com/videos/poster.jpg",
+    "uploadDate": "2026-01-17",
+    "duration": "PT6S",
+    "contentUrl": "https://yourdomain.com/videos/vivasu-hero-optimized.mp4",
+    "embedUrl": "https://yourdomain.com/"
+  }
+  </script>
+
+  <!-- Facebook Pixel 동영상 추적 스크립트 -->
+  <script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('hero-video');
+
+    if (!video) return;
+
+    // iOS Safari 자동재생 보장 (Intersection Observer)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {
+            // 자동재생 실패 시 무시 (음소거 상태라 대부분 성공)
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(video);
+
+    // Facebook Pixel: 동영상 재생 시작
+    let hasTrackedPlay = false;
+    video.addEventListener('play', function() {
+      if (!hasTrackedPlay && typeof fbq !== 'undefined') {
+        fbq('track', 'ViewContent', {
+          content_name: 'Hero Video',
+          content_category: 'Video',
+          content_type: 'video',
+          value: 0,
+          currency: 'KRW'
+        });
+        hasTrackedPlay = true;
+      }
+    });
+
+    // Facebook Pixel: 동영상 진행률 추적 (25%, 50%, 75%, 100%)
+    const milestones = { 25: false, 50: false, 75: false, 100: false };
+
+    video.addEventListener('timeupdate', function() {
+      const progress = (video.currentTime / video.duration) * 100;
+
+      Object.keys(milestones).forEach(milestone => {
+        if (progress >= milestone && !milestones[milestone]) {
+          milestones[milestone] = true;
+
+          if (typeof fbq !== 'undefined') {
+            fbq('trackCustom', 'VideoProgress', {
+              video_name: 'Hero Video',
+              progress: milestone + '%',
+              video_duration: Math.round(video.duration) + 's'
+            });
+          }
+        }
+      });
+    });
+  });
+  </script>
+
+  <!-- 카운트업 애니메이션 스크립트 (SEO 안전) -->
+  <script is:inline>
+  /**
+   * Progressive Enhancement 방식 카운트업 애니메이션
+   * - HTML에 실제 값 유지 (SEO 크롤링 보장)
+   * - JavaScript 실행 시 애니메이션 추가
+   * - Intersection Observer로 화면 진입 시만 실행
+   */
+  document.addEventListener('DOMContentLoaded', function() {
+    // 카운트업 애니메이션 함수
+    function startCountUp(element) {
+      const target = parseFloat(element.dataset.count);
+      const decimal = parseInt(element.dataset.decimal || 0);
+      const suffix = element.dataset.suffix || '';
+      const prefix = element.dataset.prefix || '';
+      const separator = element.dataset.separator || '';
+      const duration = 2000; // 2초
+      const fps = 60;
+      const totalFrames = (duration / 1000) * fps;
+      let currentFrame = 0;
+
+      const interval = setInterval(() => {
+        currentFrame++;
+        const progress = currentFrame / totalFrames;
+        // easeOutCubic: 빠르게 시작 → 천천히 끝
+        const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+        const current = target * easeOutCubic;
+
+        let displayValue;
+        if (decimal > 0) {
+          // 소수점 있음 (예: 4.9)
+          displayValue = current.toFixed(decimal);
+        } else {
+          // 정수 (예: 260, 1200)
+          displayValue = Math.floor(current).toString();
+          if (separator) {
+            // 천 단위 구분자 추가 (예: 1,200)
+            displayValue = displayValue.replace(/\B(?=(\d{3})+(?!\d))/g, separator);
+          }
+        }
+
+        element.textContent = prefix + displayValue + suffix;
+
+        // 애니메이션 완료
+        if (currentFrame >= totalFrames) {
+          clearInterval(interval);
+
+          // 최종 값 정확히 설정
+          let finalValue;
+          if (decimal > 0) {
+            finalValue = target.toFixed(decimal);
+          } else {
+            finalValue = target.toString();
+            if (separator) {
+              finalValue = finalValue.replace(/\B(?=(\d{3})+(?!\d))/g, separator);
+            }
+          }
+          element.textContent = prefix + finalValue + suffix;
+
+          // Facebook Pixel: 카운트업 완료 이벤트 (선택)
+          if (typeof fbq !== 'undefined') {
+            fbq('trackCustom', 'TrustBadgeViewed', {
+              content_name: 'Social Proof Section',
+              badge_type: element.dataset.count
+            });
+          }
+        }
+      }, 1000 / fps);
+    }
+
+    // Intersection Observer 설정 (화면에 보일 때만 애니메이션 실행)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // 50% 이상 보일 때 애니메이션 시작
+          startCountUp(entry.target);
+          observer.unobserve(entry.target); // 1회만 실행
+        }
+      });
+    }, { threshold: 0.5 });
+
+    // 모든 .countup 요소 관찰
+    document.querySelectorAll('.countup').forEach(el => {
+      observer.observe(el);
+    });
+  });
+  </script>
+</Layout>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out;
+  }
+
+  details summary {
+    list-style: none;
+  }
+
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  details[open] summary {
+    margin-bottom: 1rem;
+  }
+
+  /* Hero 동영상 배경 스타일 */
+  .hero-video-section {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--beige-100) 0%, var(--rose-gold) 100%);
+  }
+
+  /* 블러 배경 동영상 (데스크톱 전용) */
+  .hero-video-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(60px) brightness(0.7);
+    transform: scale(1.1);
+    z-index: 0;
+    display: none;
+  }
+
+  /* 메인 동영상 (중앙) */
+  .hero-video-main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border-radius: 0;
+  }
+
+  /* 모바일 (< 768px): 세로 동영상 꽉 채움 */
+  @media (max-width: 767px) {
+    .hero-video-main {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      box-shadow: none;
+      border-radius: 0;
+    }
+
+    .hero-video-blur {
+      display: none !important;
+    }
+  }
+
+  /* 태블릿 (768px - 1024px): 중앙 배치 + 둥근 모서리 */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .hero-video-main {
+      width: auto;
+      height: 90vh;
+      max-height: 90vh;
+      border-radius: 16px;
+    }
+
+    .hero-video-blur {
+      display: block;
+    }
+  }
+
+  /* 데스크톱 (> 1024px): Instagram 스타일 (블러 배경 + 중앙 원본) */
+  @media (min-width: 1025px) {
+    .hero-video-main {
+      width: auto;
+      height: 85vh;
+      max-height: 85vh;
+      border-radius: 24px;
+    }
+
+    .hero-video-blur {
+      display: block;
+    }
+  }
+
+  /* 초대형 화면 (> 1920px): 동영상 최대 높이 제한 */
+  @media (min-width: 1921px) {
+    .hero-video-main {
+      max-height: 1000px;
+    }
+  }
+
+  /* 오버레이 (반투명 검은색) */
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+  }
+
+  /* 데스크톱에서 오버레이 약하게 */
+  @media (min-width: 768px) {
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  /* 컨텐츠 */
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 33vh;
+    padding-bottom: 2rem;
+  }
+
+  /* 텍스트 그림자 */
+  .drop-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  }
+
+  .drop-shadow-md {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  /* 동영상 로딩 최적화 */
+  .hero-video-blur,
+  .hero-video-main {
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* ========================================
+     HERO 텍스트 스타일
+     ======================================== */
+
+  .hero-text-container {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* 메인 헤드라인 */
+  .hero-headline {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #FFFFFF;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+    animation: hero-fade-in 1s ease-out;
+    word-break: keep-all;
+  }
+
+  .hero-headline-emphasis {
+    color: var(--rose-gold);
+    text-shadow:
+      0 0 20px rgba(251, 209, 223, 0.6),
+      0 4px 12px rgba(0, 0, 0, 0.7);
+  }
+
+  /* 부제목 */
+  .hero-subtitle {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #F5F5F5;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    animation: hero-fade-in 1.2s ease-out;
+    word-break: keep-all;
+  }
+
+  .hero-subtitle-strong {
+    font-weight: 600;
+    color: var(--gold);
+    text-shadow:
+      0 0 15px rgba(246, 198, 63, 0.5),
+      0 2px 8px rgba(0, 0, 0, 0.6);
+  }
+
+  /* ========================================
+     신뢰 배지 (글래스모픽 디자인)
+     ======================================== */
+
+  .hero-trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2.5rem;
+
+    /* 글래스모픽 */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 100px;
+
+    /* 그림자 */
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+
+    /* 애니메이션 */
+    animation: hero-fade-in 1.4s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+  }
+
+  .hero-trust-badge:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow:
+      0 12px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+
+  .trust-badge-icon {
+    font-size: 1.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 10px rgba(246, 198, 63, 0.6);
+    flex-shrink: 0;
+  }
+
+  .trust-badge-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    text-align: left;
+  }
+
+  .trust-badge-location {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--rose-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  .trust-badge-rating {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  .trust-badge-type {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  /* ========================================
+     CTA 버튼
+     ======================================== */
+
+  .hero-cta-container {
+    animation: hero-fade-in 1.6s ease-out;
+  }
+
+  .hero-cta-primary {
+    display: inline-block;
+    font-size: 1.125rem;
+    padding: 1rem 2.5rem;
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(251, 209, 223, 0.4);
+  }
+
+  .hero-cta-primary:hover {
+    box-shadow:
+      0 12px 32px rgba(0, 0, 0, 0.4),
+      0 0 30px rgba(251, 209, 223, 0.6);
+  }
+
+  /* ========================================
+     Hero 애니메이션
+     ======================================== */
+
+  @keyframes hero-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ========================================
+     Hero 반응형 - 모바일 (< 768px)
+     ======================================== */
+
+  @media (max-width: 767px) {
+    .hero-headline {
+      font-size: 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-trust-badge {
+      padding: 0.875rem 1.25rem;
+      margin-bottom: 2rem;
+      gap: 0.625rem;
+    }
+
+    .trust-badge-icon {
+      font-size: 1.25rem;
+    }
+
+    .trust-badge-location {
+      font-size: 0.625rem;
+    }
+
+    .trust-badge-rating {
+      font-size: 0.8125rem;
+    }
+
+    .trust-badge-type {
+      font-size: 0.625rem;
+    }
+
+    .hero-cta-primary {
+      font-size: 1rem;
+      padding: 0.875rem 2rem;
+    }
+  }
+
+  /* ========================================
+     Hero 반응형 - 태블릿 (768px - 1024px)
+     ======================================== */
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .hero-headline {
+      font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+    }
+  }
+
+  /* ========================================
+     Hero 반응형 - 데스크톱 (> 1024px)
+     ======================================== */
+
+  @media (min-width: 1025px) {
+    .hero-headline {
+      font-size: 3rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+    }
+
+    .hero-trust-badge {
+      padding: 1.125rem 1.75rem;
+    }
+
+    .trust-badge-icon {
+      font-size: 1.75rem;
+    }
+
+    .trust-badge-rating {
+      font-size: 0.9375rem;
+    }
+  }
+
+  /* ========================================
+     Hero 반응형 - 초대형 화면 (> 1920px)
+     ======================================== */
+
+  @media (min-width: 1921px) {
+    .hero-headline {
+      font-size: 3.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.75rem;
+    }
+  }
+
+  /* ========================================
+     Hero 접근성 (prefers-reduced-motion)
+     ======================================== */
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-headline,
+    .hero-subtitle,
+    .hero-trust-badge,
+    .hero-cta-container {
+      animation: none;
+    }
+
+    .hero-trust-badge:hover {
+      transform: none;
+    }
+  }
+
+  /* 리뷰 캐러셀 스타일 */
+  .review-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+  }
+
+  .review-carousel {
+    display: flex;
+    gap: 1.5rem;
+    animation: scroll-left 40s linear infinite;
+    will-change: transform;
+  }
+
+  .review-carousel:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-320px * 10 - 1.5rem * 10));
+    }
+  }
+
+  .review-card {
+    flex: 0 0 320px;
+    padding: 1.5rem;
+    background: var(--beige-50);
+    border: 1px solid var(--beige-300);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .review-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .stars {
+    color: var(--gold);
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+  }
+
+  .review-text {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin: 0;
+  }
+
+  .review-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--beige-200);
+  }
+
+  .reviewer-name {
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+  }
+
+  .review-service {
+    font-size: 0.8rem;
+    color: var(--text-subtle);
+    background: var(--beige-200);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+  }
+
+  /* 반응형 조정 */
+  @media (max-width: 768px) {
+    .review-card {
+      flex: 0 0 280px;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-280px * 10 - 1.5rem * 10));
+      }
+    }
+
+    .review-carousel-wrapper {
+      mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 5%,
+        black 95%,
+        transparent 100%
+      );
+      -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 5%,
+        black 95%,
+        transparent 100%
+      );
+    }
+  }
+
+  /* 60fps 보장을 위한 하드웨어 가속 */
+  .review-carousel {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  .review-card {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* 접근성: 모션 감소 설정 */
+  @media (prefers-reduced-motion: reduce) {
+    .review-carousel {
+      animation: none;
+    }
+
+    .review-carousel-wrapper {
+      overflow-x: auto;
+      mask-image: none;
+      -webkit-mask-image: none;
+    }
+  }
+
+  /* 시술 과정 갤러리 스타일 */
+  .procedure-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .procedure-item {
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+  }
+
+  .procedure-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--beige-200) 0%, var(--beige-100) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-subtle);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+  }
+
+  .procedure-item:hover .procedure-placeholder {
+    transform: scale(1.05);
+  }
+
+  /* 프로필 섹션 스타일 */
+  .profile-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .profile-image {
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+  }
+
+  .profile-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--beige-200) 0%, var(--beige-100) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-subtle);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .profile-text {
+    text-align: center;
+  }
+
+  .profile-name {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--bronze);
+    letter-spacing: 0.12em;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  .profile-slogan {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+  }
+
+  .profile-philosophy {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    word-break: keep-all;
+  }
+
+  .profile-philosophy:last-child {
+    margin-bottom: 0;
+  }
+
+  /* 태블릿 (641px 이상) */
+  @media (min-width: 641px) {
+    .procedure-gallery {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 800px;
+    }
+
+    .procedure-item {
+      border-radius: 14px;
+    }
+
+    .profile-layout {
+      flex-direction: row;
+      align-items: center;
+      gap: 3rem;
+      max-width: 800px;
+    }
+
+    .profile-image {
+      flex: 0 0 280px;
+      border-radius: 14px;
+    }
+
+    .profile-text {
+      flex: 1;
+      text-align: left;
+    }
+
+    .profile-slogan {
+      font-size: 1.75rem;
+    }
+
+    .profile-philosophy {
+      font-size: 1rem;
+    }
+  }
+
+  /* 데스크톱 (1025px 이상) */
+  @media (min-width: 1025px) {
+    .procedure-gallery {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.75rem;
+      max-width: 1000px;
+    }
+
+    .procedure-item {
+      border-radius: 16px;
+    }
+
+    .profile-layout {
+      gap: 4rem;
+      max-width: 900px;
+    }
+
+    .profile-image {
+      flex: 0 0 320px;
+      border-radius: 16px;
+    }
+
+    .profile-name {
+      font-size: 0.9rem;
+    }
+
+    .profile-slogan {
+      font-size: 2rem;
+    }
+
+    .profile-philosophy {
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  /* 모바일에서 2열 그리드 (480px 이상) */
+  @media (min-width: 480px) and (max-width: 640px) {
+    .procedure-gallery {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 500px;
+    }
+  }
+</style>

@@ -1,0 +1,239 @@
+@import "tailwindcss";
+
+/* 비바수뷰티 베이지 색상 시스템 */
+:root {
+  /* Primary Beige (Tailwind Stone) */
+  --beige-50: #FAFAF9;      /* 밝은 배경 */
+  --beige-100: #FBF4DE;     /* 메인 배경 (Aesop 스타일) */
+  --beige-200: #F5F5F4;     /* 카드 배경 */
+  --beige-300: #E7E5E4;     /* 구분선 */
+
+  /* Accent Colors */
+  --rose-gold: #FBD1DF;     /* 로즈골드 */
+  --gold: #F6C63F;          /* 골드 */
+  --bronze: #764013;        /* 브론즈 브라운 */
+
+  /* Text Colors (WCAG AA 준수) */
+  --text-primary: #292524;   /* stone-800 - 제목 */
+  --text-secondary: #57534E; /* stone-600 - 본문 */
+  --text-subtle: #78716C;    /* stone-500 - 보조 */
+}
+
+/* 타이포그래피 */
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.6; /* 한글 권장 160% (W3C Hangul Requirements) */
+  letter-spacing: -0.01em; /* 한글 자간 미세 조정 */
+  word-break: keep-all; /* 한글 단어 단위 줄바꿈 */
+  overflow-wrap: break-word; /* 긴 단어 강제 줄바꿈 */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Noto Serif KR', serif;
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* 버튼 스타일 */
+.btn-primary {
+  background: linear-gradient(135deg, var(--rose-gold) 0%, var(--gold) 100%);
+  color: var(--text-primary);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background: var(--beige-200);
+  color: var(--text-secondary);
+  border: 1px solid var(--beige-300);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--beige-300);
+}
+
+/* 형광펜 하이라이트 효과 */
+.text-highlight {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.text-highlight::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0.1em; /* 텍스트 하단 여백 */
+  width: 100%;
+  height: 0.4em; /* 하이라이트 두께 */
+  background: linear-gradient(
+    135deg,
+    var(--beige-100) 0%,
+    var(--rose-gold) 100%
+  );
+  z-index: -1;
+  border-radius: 4px; /* 마커펜 느낌 */
+  opacity: 0.7; /* 반투명으로 텍스트 가독성 향상 */
+
+  /* 애니메이션: 왼쪽에서 오른쪽으로 그려지는 효과 */
+  transform: scaleX(0);
+  transform-origin: left center;
+  animation: drawHighlight 1s ease-out 0.5s forwards;
+}
+
+@keyframes drawHighlight {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* 접근성: 애니메이션 비활성화 요청 사용자 */
+@media (prefers-reduced-motion: reduce) {
+  .text-highlight::after {
+    animation: none;
+    transform: scaleX(1);
+  }
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .text-highlight::after {
+    height: 0.3em; /* 작은 화면에서 두께 감소 */
+  }
+}
+
+/* 시술 과정 섹션 (프리미엄 타임라인) */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  position: relative;
+  max-width: 56rem; /* 896px */
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+
+/* 각 단계 */
+.process-step {
+  text-align: center;
+  position: relative;
+}
+
+/* 숫자 원형 (Outlined 스타일) */
+.process-step-number {
+  width: 56px;
+  height: 56px;
+  border: 2px solid var(--bronze);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--bronze);
+  margin: 0 auto 1.5rem;
+  position: relative;
+  background: white;
+  z-index: 2;
+}
+
+/* 타이틀 */
+.process-step-title {
+  font-size: 1.125rem; /* 18px */
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+/* 설명 */
+.process-step-description {
+  font-size: 0.875rem; /* 14px */
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* 모바일: 2열 그리드 */
+@media (max-width: 768px) {
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1rem;
+  }
+
+  .process-step-number {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+}
+
+/* 태블릿 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .process-steps {
+    gap: 0.75rem;
+  }
+}
+
+/* Contact Section - 네이버 지도 반응형 */
+.map-container {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* 모바일: 4:3 비율 */
+  min-height: 400px; /* 네이버 플레이스 UI 요소 표시를 위한 최소 높이 */
+  border-radius: 0.75rem; /* 12px */
+  overflow: hidden;
+  border: 1px solid var(--beige-300);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block; /* iframe 하단 공백 제거 */
+}
+
+/* 태블릿 (768-1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .map-container {
+    aspect-ratio: 16 / 10;
+    min-height: 450px;
+  }
+}
+
+/* 데스크톱 (1024px+): 와이드 비율 */
+@media (min-width: 1024px) {
+  .map-container {
+    aspect-ratio: 16 / 9;
+    min-height: 500px;
+    max-height: 600px; /* 과도하게 커지는 것 방지 */
+  }
+}
+
