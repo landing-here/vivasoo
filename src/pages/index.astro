@@ -1083,8 +1083,8 @@ const siteDescription = "영통역 속눈썹 연장·펌 전문! 260개 리뷰 �
     "@context": "https://schema.org",
     "@type": "BeautySalon",
     "name": "비바수뷰티",
-    "image": "https://vivasu-beauty.vercel.app/logo.png",
-    "url": "https://vivasu-beauty.vercel.app",
+    "image": "https://vivasoo.vercel.app/logo.png",
+    "url": "https://vivasoo.vercel.app",
     "telephone": "0507-1413-5222",
     "address": {
       "@type": "PostalAddress",
@@ -1128,11 +1128,11 @@ const siteDescription = "영통역 속눈썹 연장·펌 전문! 260개 리뷰 �
     "@type": "VideoObject",
     "name": "비바수뷰티 LED펌포인트연장 시술 과정",
     "description": "영통/망포 속눈썹 전문점 비바수뷰티의 LED펌포인트연장 시술 과정. 자연스럽고 관리가 편한 프리미엄 속눈썹 시술.",
-    "thumbnailUrl": "https://vivasu-beauty.vercel.app/videos/poster.jpg",
+    "thumbnailUrl": "https://vivasoo.vercel.app/videos/poster.jpg",
     "uploadDate": "2026-01-17",
     "duration": "PT6S",
-    "contentUrl": "https://vivasu-beauty.vercel.app/videos/vivasu-hero-optimized.mp4",
-    "embedUrl": "https://vivasu-beauty.vercel.app/"
+    "contentUrl": "https://vivasoo.vercel.app/videos/vivasu-hero-optimized.mp4",
+    "embedUrl": "https://vivasoo.vercel.app/"
   }
   </script>
 
@@ -2491,5 +2491,25 @@ const siteDescription = "영통역 속눈썹 연장·펌 전문! 260개 리뷰 �
     .problem-icon:hover {
       transform: none;
     }
+  }
+
+  /* 네이버 지도 iframe 컨테이너 */
+  .map-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 비율 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
   }
 </style>
