@@ -659,7 +659,6 @@ const siteDescription = "영통역 속눈썹 연장·펌 전문! 260개 리뷰 �
               height="200"
               itemprop="image"
             />
-            <div class="ticket-badge">첫방문</div>
           </div>
 
           <!-- 중앙 점선 구분선 -->
@@ -1043,14 +1042,40 @@ const siteDescription = "영통역 속눈썹 연장·펌 전문! 260개 리뷰 �
 
         <!-- 지도 (모바일 상단, 데스크톱 우측) -->
         <div class="order-1 lg:order-2">
-          <div class="map-container">
+          <!-- PC용 지도 (769px 이상) -->
+          <div class="map-container-pc">
             <iframe
               src="https://map.naver.com/p/entry/place/2013429549?c=15.00,0,0,0,dh"
               title="비바수뷰티 위치 (경기도 수원시 영통구 영통로501번길 48-14 3층)"
               aria-label="네이버 지도로 비바수뷰티 매장 위치 확인"
               loading="lazy"
+              allowfullscreen
               referrerpolicy="no-referrer-when-downgrade"
+              class="map-iframe"
             ></iframe>
+          </div>
+
+          <!-- 모바일용 버튼 (768px 이하) -->
+          <a
+            href="https://map.naver.com/p/entry/place/2013429549"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="map-mobile-btn"
+            aria-label="네이버 지도 앱으로 비바수뷰티 위치 열기"
+          >
+            네이버 지도 앱으로 열기 →
+          </a>
+
+          <!-- PC용 텍스트 링크 (769px 이상) -->
+          <div class="map-link-wrap">
+            <a
+              href="https://map.naver.com/p/entry/place/2013429549"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="map-link"
+            >
+              네이버 지도 앱으로 열기 →
+            </a>
           </div>
         </div>
 
@@ -2223,6 +2248,7 @@ const siteDescription = "영통역 속눈썹 연장·펌 전문! 260개 리뷰 �
 
   /* ========================================
      네이버 플레이스 쿠폰 섹션 (프리미엄 티켓형)
+     2026 모바일 최적화 - 가로 레이아웃 유지
      ======================================== */
 
   /* 티켓 컨테이너 */
@@ -2248,12 +2274,27 @@ const siteDescription = "영통역 속눈썹 연장·펌 전문! 260개 리뷰 �
     background-repeat: no-repeat;
   }
 
-  /* 모바일 레이아웃 */
+  /* 모바일 레이아웃 (320px~768px) - 가로 2열 유지 (티켓 느낌) */
   @media (max-width: 768px) {
     .ticket-wrapper {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto 2px auto;
-      background-image: none; /* 모바일에서는 notch 제거 */
+      /* 가로 2열: 이미지 35% | 정보 65% */
+      grid-template-columns: 100px 2px 1fr;
+      border-radius: 12px;
+
+      /* 모바일용 Notch (좌측 기준) */
+      background-image:
+        radial-gradient(circle at 100px 0, transparent 12px, white 13px),
+        radial-gradient(circle at 100px 100%, transparent 12px, white 13px);
+    }
+  }
+
+  /* 초소형 모바일 (320px~374px) - iPhone SE 대응 */
+  @media (max-width: 374px) {
+    .ticket-wrapper {
+      grid-template-columns: 90px 2px 1fr;
+      background-image:
+        radial-gradient(circle at 90px 0, transparent 10px, white 11px),
+        radial-gradient(circle at 90px 100%, transparent 10px, white 11px);
     }
   }
 
@@ -2268,22 +2309,39 @@ const siteDescription = "영통역 속눈썹 연장·펌 전문! 260개 리뷰 �
     position: relative;
   }
 
+  /* 모바일: 이미지 영역 축소 */
+  @media (max-width: 768px) {
+    .ticket-left {
+      padding: 16px 12px;
+    }
+  }
+
+  @media (max-width: 374px) {
+    .ticket-left {
+      padding: 12px 8px;
+    }
+  }
+
+  /* 쿠폰 이미지 */
   .ticket-image {
     width: 160px;
     height: 160px;
     object-fit: contain;
-    margin-bottom: 16px;
   }
 
-  .ticket-badge {
-    background: linear-gradient(135deg, var(--rose-gold) 0%, var(--gold) 100%);
-    color: var(--text-primary);
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    box-shadow: 0 2px 8px rgba(251, 209, 223, 0.3);
+  /* 모바일: 이미지 크기 50% 축소 */
+  @media (max-width: 768px) {
+    .ticket-image {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  @media (max-width: 374px) {
+    .ticket-image {
+      width: 70px;
+      height: 70px;
+    }
   }
 
   /* 중앙 점선 구분선 */
@@ -2299,17 +2357,16 @@ const siteDescription = "영통역 속눈썹 연장·펌 전문! 260개 리뷰 �
     width: 2px;
   }
 
-  /* 모바일: 수평 점선 */
+  /* 모바일: 세로 점선 유지 (가로 레이아웃이므로) */
   @media (max-width: 768px) {
     .ticket-divider {
-      height: 2px;
-      width: 100%;
+      /* 세로 점선 그대로 유지 */
       background: repeating-linear-gradient(
-        to right,
+        to bottom,
         var(--beige-300) 0px,
-        var(--beige-300) 8px,
-        transparent 8px,
-        transparent 16px
+        var(--beige-300) 6px,
+        transparent 6px,
+        transparent 12px
       );
     }
   }
@@ -2323,9 +2380,18 @@ const siteDescription = "영통역 속눈썹 연장·펌 전문! 260개 리뷰 �
     gap: 24px;
   }
 
+  /* 모바일: 패딩 축소 + 간격 조정 */
   @media (max-width: 768px) {
     .ticket-right {
-      padding: 24px 20px;
+      padding: 16px 14px;
+      gap: 14px;
+    }
+  }
+
+  @media (max-width: 374px) {
+    .ticket-right {
+      padding: 12px 10px;
+      gap: 10px;
     }
   }
 
@@ -2336,6 +2402,13 @@ const siteDescription = "영통역 속눈썹 연장·펌 전문! 260개 리뷰 �
     gap: 8px;
   }
 
+  @media (max-width: 768px) {
+    .ticket-header {
+      gap: 4px;
+    }
+  }
+
+  /* 제목 */
   .ticket-title {
     font-family: 'Noto Serif KR', serif;
     font-size: 1.75rem;
@@ -2345,16 +2418,42 @@ const siteDescription = "영통역 속눈썹 연장·펌 전문! 260개 리뷰 �
     margin: 0;
   }
 
+  /* 모바일: 제목 크기 축소 (1줄로 표시) */
   @media (max-width: 768px) {
     .ticket-title {
-      font-size: 1.5rem;
+      font-size: 1.0625rem; /* 17px */
+      line-height: 1.35;
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
   }
 
+  @media (max-width: 374px) {
+    .ticket-title {
+      font-size: 0.9375rem; /* 15px */
+      line-height: 1.4;
+    }
+  }
+
+  /* 부제목 */
   .ticket-subtitle {
     font-size: 0.875rem;
     color: var(--text-subtle);
     font-weight: 400;
+  }
+
+  /* 모바일: 부제목 더 작게 */
+  @media (max-width: 768px) {
+    .ticket-subtitle {
+      font-size: 0.6875rem; /* 11px */
+      line-height: 1.4;
+    }
+  }
+
+  @media (max-width: 374px) {
+    .ticket-subtitle {
+      font-size: 0.625rem; /* 10px */
+    }
   }
 
   /* 혜택 리스트 */
@@ -2367,6 +2466,14 @@ const siteDescription = "영통역 속눈썹 연장·펌 전문! 260개 리뷰 �
     gap: 12px;
   }
 
+  /* 모바일: 간격 축소 */
+  @media (max-width: 768px) {
+    .ticket-benefits {
+      gap: 6px;
+    }
+  }
+
+  /* 혜택 항목 */
   .ticket-benefit-item {
     display: flex;
     align-items: center;
@@ -2375,11 +2482,43 @@ const siteDescription = "영통역 속눈썹 연장·펌 전문! 260개 리뷰 �
     color: var(--text-secondary);
   }
 
+  /* 모바일: 텍스트 크기 축소 + 간격 조정 */
+  @media (max-width: 768px) {
+    .ticket-benefit-item {
+      gap: 6px;
+      font-size: 0.6875rem; /* 11px */
+      line-height: 1.4;
+    }
+  }
+
+  @media (max-width: 374px) {
+    .ticket-benefit-item {
+      font-size: 0.625rem; /* 10px */
+      gap: 4px;
+    }
+  }
+
+  /* 체크 아이콘 */
   .ticket-icon {
     width: 20px;
     height: 20px;
     color: var(--gold);
     flex-shrink: 0;
+  }
+
+  /* 모바일: 아이콘 크기 축소 */
+  @media (max-width: 768px) {
+    .ticket-icon {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  @media (max-width: 374px) {
+    .ticket-icon {
+      width: 12px;
+      height: 12px;
+    }
   }
 
   /* CTA 버튼 */
@@ -2398,6 +2537,8 @@ const siteDescription = "영통역 속눈썹 연장·펌 전문! 260개 리뷰 �
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px rgba(251, 209, 223, 0.3);
     align-self: flex-start;
+    /* Apple HIG / Material Design 터치 영역 (최소 44px) */
+    min-height: 44px;
   }
 
   .ticket-cta:hover {
@@ -2412,15 +2553,46 @@ const siteDescription = "영통역 속눈썹 연장·펌 전문! 260개 리뷰 �
     outline-offset: 2px;
   }
 
+  /* 모바일: 버튼 크기 축소 (터치 영역 44px 유지) */
+  @media (max-width: 768px) {
+    .ticket-cta {
+      width: 100%;
+      padding: 10px 12px;
+      font-size: 0.75rem; /* 12px */
+      font-weight: 700;
+      border-radius: 8px;
+      gap: 4px;
+      min-height: 44px; /* 터치 영역 보장 */
+    }
+  }
+
+  @media (max-width: 374px) {
+    .ticket-cta {
+      font-size: 0.6875rem; /* 11px */
+      padding: 9px 10px;
+    }
+  }
+
+  /* 다운로드 아이콘 */
   .ticket-download-icon {
     width: 20px;
     height: 20px;
     stroke-width: 2.5;
   }
 
+  /* 모바일: 아이콘 크기 축소 */
   @media (max-width: 768px) {
-    .ticket-cta {
-      width: 100%;
+    .ticket-download-icon {
+      width: 14px;
+      height: 14px;
+      stroke-width: 3;
+    }
+  }
+
+  @media (max-width: 374px) {
+    .ticket-download-icon {
+      width: 12px;
+      height: 12px;
     }
   }
 
@@ -2493,23 +2665,91 @@ const siteDescription = "영통역 속눈썹 연장·펌 전문! 260개 리뷰 �
     }
   }
 
-  /* 네이버 지도 iframe 컨테이너 */
-  .map-container {
-    position: relative;
+  /* 네이버 지도 - 모바일 우선 (Mobile First) */
+
+  /* PC용 지도 - 기본 숨김 */
+  .map-container-pc {
+    display: none;
+  }
+
+  .map-iframe {
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 비율 */
-    height: 0;
-    overflow: hidden;
-    border-radius: 12px;
+    height: 360px;
+    border-radius: 16px;
+    border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
-  .map-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
+  /* 모바일용 버튼 - 기본 표시 */
+  .map-mobile-btn {
+    display: block;
+    background: var(--bronze); /* #764013 브론즈 */
+    color: white;
+    text-decoration: none;
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .map-mobile-btn:hover {
+    background: #5a2f0e;
+    transform: translateY(-2px);
+  }
+
+  /* PC용 텍스트 링크 - 기본 숨김 */
+  .map-link {
+    display: none;
+  }
+
+  .map-link-wrap {
+    text-align: center;
+  }
+
+  /* Tablet 이상 (>= 769px) - 지도 표시, 버튼 숨김 */
+  @media (min-width: 769px) {
+    .map-container-pc {
+      display: block;
+    }
+
+    .map-mobile-btn {
+      display: none;
+    }
+
+    .map-iframe {
+      height: 360px;
+      border-radius: 18px;
+    }
+
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      color: var(--text-secondary); /* #57534E */
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .map-link:hover {
+      color: var(--text-primary); /* #292524 */
+    }
+  }
+
+  /* Desktop (>= 1025px) */
+  @media (min-width: 1025px) {
+    .map-iframe {
+      height: 420px;
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: 20px;
+    }
+
+    .map-link {
+      font-size: 0.95rem;
+    }
   }
 </style>
